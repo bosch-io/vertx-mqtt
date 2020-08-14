@@ -33,9 +33,9 @@ import static org.junit.Assert.assertTrue;
  * MQTT client testing on unsubscribing topics
  */
 @RunWith(VertxUnitRunner.class)
-public class MqttClientUnsubscribeTest {
+public class MqttClientUnsubscribeIT {
 
-  private static final Logger log = LoggerFactory.getLogger(MqttClientUnsubscribeTest.class);
+  private static final Logger log = LoggerFactory.getLogger(MqttClientUnsubscribeIT.class);
 
   private static final String MQTT_TOPIC = "/my_topic";
 

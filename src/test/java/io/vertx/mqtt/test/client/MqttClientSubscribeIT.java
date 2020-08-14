@@ -36,9 +36,9 @@ import static org.junit.Assert.assertTrue;
  * MQTT client testing on subscribing topics
  */
 @RunWith(VertxUnitRunner.class)
-public class MqttClientSubscribeTest {
+public class MqttClientSubscribeIT {
 
-  private static final Logger log = LoggerFactory.getLogger(MqttClientSubscribeTest.class);
+  private static final Logger log = LoggerFactory.getLogger(MqttClientSubscribeIT.class);
 
   private static final String MQTT_TOPIC = "/my_topic";
   private static final String MQTT_MESSAGE = "Hello Vert.x MQTT Client";

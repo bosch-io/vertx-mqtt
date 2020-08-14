@@ -37,7 +37,7 @@ import static org.junit.Assert.assertTrue;
  * MQTT client testing about connection
  */
 @RunWith(VertxUnitRunner.class)
-public class MqttClientConnectTest {
+public class MqttClientConnectIT {
 
   @Test
   public void connectDisconnect(TestContext context) throws InterruptedException {

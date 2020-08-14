@@ -36,9 +36,9 @@ import static org.junit.Assert.assertTrue;
  * MQTT client testing about the maximum message size
  */
 @RunWith(VertxUnitRunner.class)
-public class MqttClientMaxMessageSizeTest {
+public class MqttClientMaxMessageSizeIT {
 
-  private static final Logger log = LoggerFactory.getLogger(MqttClientMaxMessageSizeTest.class);
+  private static final Logger log = LoggerFactory.getLogger(MqttClientMaxMessageSizeIT.class);
 
   private static final String MQTT_TOPIC = "/my_topic";
   private static final int MQTT_MAX_MESSAGE_SIZE = 50;
