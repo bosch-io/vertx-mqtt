@@ -143,6 +143,31 @@ public interface MqttClient {
   MqttClient publishCompletionHandler(Handler<Integer> publishCompletionHandler);
 
   /**
+   * Sets a handler which will be called when the client does not receive a PUBACK for a
+   * message published using QoS 1 or 2.
+   * <p>
+   * The time to wait for a PUBACK can be configured using {@link MqttClientOptions#setPublishTimeout(int)}.
+   * If the client receives a PUBACK for a message after its completion has expired,
+   * the handler registered using {@link #publishCompletionPhantomHandler(Handler)} will
+   * be invoked.
+   *
+   * @param publishCompletionExpirationHandler handler called with the packetId
+   * @return current MQTT client instance
+   */
+  @Fluent
+  MqttClient publishCompletionExpirationHandler(Handler<Integer> publishCompletionExpirationHandler);
+
+  /**
+   * Sets a handler which will be called when the client receives a PUBACK with an unknown
+   * packetId.
+   *
+   * @param publishCompletionPhantomHandler handler called with the packetId
+   * @return current MQTT client instance
+   */
+  @Fluent
+  MqttClient publishCompletionPhantomHandler(Handler<Integer> publishCompletionPhantomHandler);
+
+  /**
    * Sets handler which will be called each time server publish something to client
    *
    * @param publishHandler handler to call

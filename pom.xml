@@ -23,6 +23,7 @@
   <properties>
     <stack.version>4.0.0-SNAPSHOT</stack.version>
     <junit.version>4.12</junit.version>
+    <mockito.version>3.3.3</mockito.version>
     <paho.version>1.1.0</paho.version>
     <fabric8-docker-plugin.version>0.21.0</fabric8-docker-plugin.version>
     <jar.manifest>${project.basedir}/src/main/resources/META-INF/MANIFEST.MF</jar.manifest>
@@ -103,6 +104,12 @@
       <version>${paho.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <licenses>
@@ -119,7 +126,7 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
           <excludes>
-            <exclude>**/MqttClient*.java</exclude>
+            <exclude>io/vertx/mqtt/test/client/MqttClient*.java</exclude>
           </excludes>
           <systemProperties>
             <mqtt.server.host>${mqtt.server.host}</mqtt.server.host>
@@ -140,7 +147,7 @@
         </executions>
         <configuration>
           <includes>
-            <include>**/MqttClient*Test.java</include>
+            <include>io/vertx/mqtt/test/client/MqttClient*Test.java</include>
           </includes>
           <excludes>
             <exclude>**/MqttServer*Test.java</exclude>
